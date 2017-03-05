@@ -67,3 +67,7 @@ Read more ways from the Arduino's official docs here: https://www.arduino.cc/en/
 
 ## TODO
 * write some examples
+
+## License
+
+MIT
