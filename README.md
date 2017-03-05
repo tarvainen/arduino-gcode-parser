@@ -20,13 +20,13 @@ contain the values in itself. All values are stored as float values.
 ```
 void loop() {
   if (Serial.available() > 0) {
-	char result[100];
+  char result[100];
 
     // Read input data to the array
-	Serial.readBytesUntil('\n', result, 100);
+  Serial.readBytesUntil('\n', result, 100);
 
     // Parse the input
-	code.parse(result);
+  code.parse(result);
 
     // Check if the received gcode had 'X' value given and print it
     if (code.has('X')) {
@@ -36,7 +36,34 @@ void loop() {
 }
 ```
 
-## TODO
+## Installation
 
-* write about installation
+### Using PlatformIO library manager (recommended)
+
+There is one absolutely cool tool called PlatformIO which allows you to
+run your awesome IOT projects more easily and with less amount of stress. I
+personally highly recommend using PlatformIO since it makes these things a lots
+of easier.
+
+Read more from their official docs here: http://docs.platformio.org/en/stable/userguide/lib/cmd_install.html
+
+Installation with the PlatformIO library manager goes like this:
+1. Define this repository as a dependency to the platformio.ini file (see example below)
+2. Build the project (PlatformIO automatically loads the dependencies)
+
+```
+[env:uno]
+platform = atmelavr
+board = uno
+framework = arduino
+
+lib_deps =
+  https://gitlab.com/tarvainen/arduino-gcode-parser.git#master
+```
+
+### Other ways
+
+Read more ways from the Arduino's official docs here: https://www.arduino.cc/en/guide/libraries
+
+## TODO
 * write some examples
