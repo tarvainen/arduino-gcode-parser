@@ -8,29 +8,29 @@
  */
 class GCode {
 
-	// private structure to handle also the 0.00 values
-	typedef struct code {
-		float value;
-		bool set;
-	} code;
+  // private structure to handle also the 0.00 values
+  typedef struct code {
+    float value;
+    bool set;
+  } code;
 
 private:
-	code values[26];
-	char *lastReceivedString;
+  code values[26];
+  char *lastReceivedString;
 
-	// private functions
-	void parse();
-	void set(char, float);
-	void empty();
+  // private functions
+  void parse();
+  void set(char, float);
+  void empty();
 
 public:
-	GCode();
-	GCode(char *);
+  GCode();
+  GCode(char *);
 
-	float get(char);
+  float get(char);
 
-	void parse(char *);
-	bool has(char);
+  void parse(char *);
+  bool has(char);
 };
 
 #endif // ARDUINO_GCODE_PARSER_H
